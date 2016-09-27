@@ -42,12 +42,18 @@ LOCAL_MODULE := swscale
 LOCAL_SRC_FILES := libswscale-3.so
 include $(PREBUILT_SHARED_LIBRARY)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := yuv
+LOCAL_SRC_FILES := libyuv.so
+include $(PREBUILT_SHARED_LIBRARY)
+
 #myapp
 include $(CLEAR_VARS)
 LOCAL_MODULE := FFmpetYuv
-LOCAL_SRC_FILES := FFmpetYuv.c
+LOCAL_SRC_FILES := FFmpetYuv.c FFmpegaudio.c
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
-LOCAL_LDLIBS := -llog
-LOCAL_SHARED_LIBRARIES := avcodec avdevice avfilter avformat avutil postproc swresample swscale
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/include/libyuv
+LOCAL_LDLIBS := -llog -landroid
+LOCAL_SHARED_LIBRARIES := avcodec avdevice avfilter avformat avutil postproc swresample swscale yuv
 include $(BUILD_SHARED_LIBRARY)
 

@@ -3,5 +3,13 @@
 
     <string name="app_name">FFmpetYuv</string>
     <string name="hello_world">Hello world!</string>
-
+	<string-array name="video_list">
+		    <item>input.mp4</item>
+		    <item>Titanic.mkv</item>
+		    <item>Warcraft3_End.avi</item>
+		    <item>hehuoren.flv</item>
+		    <item>cuc_ieschool.mkv</item>
+		    <item>Forrest_Gump_IMAX.mp4</item>
+		    <item>sintel.h264</item>
+	</string-array>
 </resources>
